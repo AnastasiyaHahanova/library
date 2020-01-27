@@ -1,0 +1,20 @@
+{{ form_start(form) }}
+<div class="form" >
+<label>Author</label>
+<div class="input">
+    {{ form_widget(form.author) }}
+</div>
+<label>Name</label>
+<div class="input">
+
+    {{ form_widget(form.name) }}
+</div>
+<label>Year</label>
+<div class="input">
+
+    {{ form_widget(form.year) }}
+</div>
+
+<button style="color: yellow">{{ button_label|default('Save') }}</button>
+</div>
+{{ form_end(form) }}

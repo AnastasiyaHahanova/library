@@ -1,0 +1,12 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: App\Controller\BookController::index
+
+edit_book:
+  path: /book/{id}
+  controller: App\Controller\BookController::edit
+  requirements:
+    id: '\d+'

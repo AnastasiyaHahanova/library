@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book index{% endblock %}
+
+{% block body %}
+    <h1>Books</h1>
+        <button style="margin-bottom: 20px; width: 145px"> <a href="{{ path('book_new') }}">Create new</a></button>
+
+    <table class="table" width="100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Author</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.year }}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                    <button class="btn btn-danger"> <a href="{{ path('book_show', {'id': book.id}) }}">Show</a></button>
+                </td>
+                <td>
+                    <button class="btn btn-danger">  <a href="{{ path('book_edit', {'id': book.id}) }}">Edit</a></button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<div class="pagination" style="color: #222222"> {{ knp_pagination_render(books) }}</div>
+
+{% endblock %}

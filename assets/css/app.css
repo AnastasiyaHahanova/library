@@ -1,0 +1,56 @@
+body {
+    /*background-color: #B0E0E6;*/
+    background: linear-gradient(to top, #B0E0E6, #ffffff);
+}
+table{
+    border: 1px;
+}
+td {
+    padding: 20px;
+    height: 50px;
+    text-align: center;
+}
+th{
+    color: #aacd4e;
+    background: #00008B;
+}
+button
+{
+    width: 70px;
+    height: 30px;
+    background: #00008B;
+    border: 0px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+A {
+    text-decoration: none;
+    color:  yellow;
+}
+.pagination {
+
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background: #00008B;
+}
+.input
+{
+    padding: 20px;
+}
+.form
+{
+    margin-left: 20px;
+}
+.back
+{
+    width: 90px;
+    padding: 5px;
+}
+label
+{
+    padding-right: 10px;
+    font-weight: bold;
+}
+
