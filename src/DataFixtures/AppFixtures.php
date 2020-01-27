@@ -40,6 +40,23 @@ class AppFixtures extends Fixture
         $book->setAuthor("Ш.Бронте");
         $manager->persist($book);
 
+        $book = new Book();
+        $book->setYear(1847);
+        $book->setName("Грозовой перевал");
+        $book->setAuthor("Э.Бронте");
+        $manager->persist($book);
+
+        $book = new Book();
+        $book->setYear(1948);
+        $book->setName("Исповедь");
+        $book->setAuthor("Жан Жак Руссо");
+        $manager->persist($book);
+
+        $book = new Book();
+        $book->setYear(1967);
+        $book->setName("Сто лет одиночества");
+        $book->setAuthor("Габриэль Гарсиа Маркес");
+        $manager->persist($book);
 
         $manager->flush();
     }
