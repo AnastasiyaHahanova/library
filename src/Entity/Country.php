@@ -26,16 +26,26 @@ class Country
      */
     private $iso;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -43,11 +53,18 @@ class Country
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getIso(): ?string
     {
         return $this->iso;
     }
 
+    /**
+     * @param string $iso
+     * @return $this
+     */
     public function setIso(string $iso): self
     {
         $this->iso = $iso;

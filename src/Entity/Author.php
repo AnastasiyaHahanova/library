@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\AuthorRepository")
  */
-class User
+class Author
 {
     /**
      * @ORM\Id()
@@ -15,11 +15,6 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $username;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -39,12 +34,15 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $email;
+    private $birthDate;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @var Country
+     * @ORM\ManyToOne(targetEntity="App\Entity\Country")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $birthDate;
+
+    private $country;
 
     /**
      * @return int|null
@@ -52,25 +50,6 @@ class User
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
-
-    /**
-     * @param string $username
-     * @return $this
-     */
-    public function setUsername(string $username): self
-    {
-        $this->username = $username;
-
-        return $this;
     }
 
     /**
@@ -133,35 +112,16 @@ class User
     /**
      * @return string|null
      */
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param string $email
-     * @return $this
-     */
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * @return \DateTimeInterface|null
-     */
-    public function getBirthDate(): ?\DateTimeInterface
+    public function getBirthDate(): ?string
     {
         return $this->birthDate;
     }
 
     /**
-     * @param \DateTimeInterface|null $birthDate
+     * @param string $birthDate
      * @return $this
      */
-    public function setBirthDate(?\DateTimeInterface $birthDate): self
+    public function setBirthDate(string $birthDate): self
     {
         $this->birthDate = $birthDate;
 

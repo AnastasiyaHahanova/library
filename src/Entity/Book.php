@@ -31,16 +31,26 @@ class Book
      */
     private $author;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -48,11 +58,18 @@ class Book
         return $this;
     }
 
+    /**
+     * @return int|null
+     */
     public function getYear(): ?int
     {
         return $this->year;
     }
 
+    /**
+     * @param int|null $year
+     * @return $this
+     */
     public function setYear(?int $year): self
     {
         $this->year = $year;
@@ -60,20 +77,22 @@ class Book
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getAuthor(): ?string
     {
         return $this->author;
     }
 
+    /**
+     * @param string $author
+     * @return $this
+     */
     public function setAuthor(string $author): self
     {
         $this->author = $author;
 
         return $this;
-    }
-
-    public function fetchBooks()
-    {
-
     }
 }
