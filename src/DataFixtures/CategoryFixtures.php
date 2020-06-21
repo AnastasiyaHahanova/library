@@ -14,6 +14,10 @@ class CategoryFixtures extends Fixture
         $manager->persist($category);
 
         $category =  new Category();
+        $category->setName('Зарубежная литература');
+        $manager->persist($category);
+
+        $category =  new Category();
         $category->setName('Детская литература');
         $manager->persist($category);
 
