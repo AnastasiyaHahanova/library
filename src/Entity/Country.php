@@ -24,6 +24,11 @@ class Country
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $continent;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $iso;
 
     /**
@@ -71,4 +76,25 @@ class Country
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getContinent()
+    {
+        return $this->continent;
+    }
+
+    /**
+     * @param string $continent
+     * @return Country
+     */
+    public function setContinent($continent)
+    {
+        $this->continent = $continent;
+
+        return $this;
+    }
+
+
 }
