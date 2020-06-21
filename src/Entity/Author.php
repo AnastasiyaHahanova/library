@@ -127,4 +127,25 @@ class Author
 
         return $this;
     }
+
+    /**
+     * @return Country
+     */
+    public function getCountry(): Country
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Author
+     */
+    public function setCountry(Country $country): Author
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+
 }
