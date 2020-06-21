@@ -5,10 +5,17 @@ namespace App\DataFixtures;
 use App\Entity\Book;
 use App\Repository\CategoryRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class AppFixtures extends Fixture
+class MyBooksFixtures extends Fixture implements DependentFixtureInterface
 {
     private $categoryRepository;
+    public function getDependencies()
+    {
+        return array(
+            CategoryFixtures::class,
+        );
+    }
     public function __construct(CategoryRepository $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
