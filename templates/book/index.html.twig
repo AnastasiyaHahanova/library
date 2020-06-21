@@ -13,6 +13,7 @@
                 <th>Name</th>
                 <th>Year</th>
                 <th>Author</th>
+                <th>Category</th>
                 <th colspan="2">Actions</th>
             </tr>
         </thead>
@@ -23,6 +24,7 @@
                 <td>{{ book.name }}</td>
                 <td>{{ book.year }}</td>
                 <td>{{ book.author }}</td>
+                <td>{{ book.getCategory.name }}</td>
                 <td>
                     <button class="btn btn-danger"> <a href="{{ path('book_show', {'id': book.id}) }}">Show</a></button>
                 </td>
