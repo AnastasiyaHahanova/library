@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Book;
+use App\Entity\Category;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,8 +20,11 @@ class BookType extends AbstractType
             ->add('name', TextType::class)
             ->add('year', NumberType::class)
             ->add('author', TextType::class)
-            ->add('submit', SubmitType::class)
-        ;
+            ->add('category', EntityType::class, [
+                'label' => 'Category',
+                'class' => Category::class
+            ])
+            ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

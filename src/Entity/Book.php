@@ -107,7 +107,7 @@ class Book
     /**
      * @return Category
      */
-    public function getCategory(): Category
+    public function getCategory(): ?Category
     {
         return $this->category;
     }
@@ -121,5 +121,10 @@ class Book
         $this->category = $category;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getCategory();
     }
 }
