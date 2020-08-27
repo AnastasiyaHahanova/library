@@ -10,8 +10,6 @@ security:
                 # optional: if you're using multiple Doctrine entity
                 # managers, this option defines which one to use
                 # manager_name: 'customer'
-        logout:
-            path: app_logout
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/

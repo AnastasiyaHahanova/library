@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookController extends AbstractController
 {
     /**
-     * @Route("/", name="book_index", methods={"GET"})
+     * @Route("/list", name="book_index", methods={"GET"})
      */
 
     public function index(Request $request, PaginatorInterface $paginator,BookRepository $bookRepository)

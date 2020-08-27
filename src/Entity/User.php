@@ -47,6 +47,11 @@ class User
     private $birthDate;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $password;
+
+    /**
      * @return int|null
      */
     public function getId(): ?int
@@ -164,6 +169,25 @@ class User
     public function setBirthDate(?\DateTimeInterface $birthDate): self
     {
         $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     * @return $this
+     */
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
 
         return $this;
     }
