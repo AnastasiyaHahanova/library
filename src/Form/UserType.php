@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Doctrine\DBAL\Types\TextType;
+use DateTime;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +20,7 @@ class UserType extends AbstractType
             ->add('secondName', TextType::class)
             ->add('patronymic', TextType::class)
             ->add('email', TextType::class)
-            ->add('birthDate', \DateTime::class)
+            ->add('birthDate', DateType::class)
         ;
     }
 
