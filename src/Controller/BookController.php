@@ -35,7 +35,7 @@ class BookController extends AbstractController
         );
 
         // Render the twig view
-        return $this->render('book/index.html.twig', [
+        return $this->render('Book/index.html.twig', [
             'books' => $books
         ]);
     }
@@ -57,7 +57,7 @@ class BookController extends AbstractController
             return $this->redirectToRoute('book_index');
         }
 
-        return $this->render('book/new.html.twig', [
+        return $this->render('Book/new.html.twig', [
             'book' => $book,
             'form' => $form->createView(),
         ]);
@@ -68,7 +68,7 @@ class BookController extends AbstractController
      */
     public function show(Book $book): Response
     {
-        return $this->render('book/show.html.twig', [
+        return $this->render('Book/show.html.twig', [
             'book' => $book,
         ]);
     }
@@ -87,7 +87,7 @@ class BookController extends AbstractController
             return $this->redirectToRoute('book_index');
         }
 
-        return $this->render('book/edit.html.twig', [
+        return $this->render('Book/edit.html.twig', [
             'book' => $book,
             'form' => $form->createView(),
         ]);
