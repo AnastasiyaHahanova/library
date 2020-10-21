@@ -1,6 +1,43 @@
 body {
-    /*background-color: #B0E0E6;*/
-    background: linear-gradient(to top, #B0E0E6, #ffffff);
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background:  url("../img/background.png") no-repeat 50% 0;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(221, 160, 221,.5);
+}
+
+.auth{
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45em;
+    height: 25em;
+    border-color:  #000 #4B0082;
+    border-width: 3px;
+    border-style: solid none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-lg
+{
+    width: 225px;
+    height: 40px;
+}
+
+
+.row
+{
+    padding: 15px;
+    display: block;
 }
 table{
     border: 1px;
@@ -16,17 +53,22 @@ th{
 }
 button
 {
-    width: 70px;
-    height: 30px;
-    background: #00008B;
-    border: 0px;
-    border-radius: 25px;
-    font-weight: bold;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: .5em 2em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #FDBE33 #000 #4B0082;
+    border-radius: 6px;
+    background: linear-gradient(#FFC0CB, #4B0082) #800080;
+    transition: 0.2s;
 }
 
 A {
     text-decoration: none;
-    color:  yellow;
+    color:  whitesmoke;
 }
 .pagination {
 
@@ -37,7 +79,22 @@ A {
 }
 .input
 {
-    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 30px;
+    width: 220px;
+    color: black;
+    font-size: 11px;
+    font-family: Arial;
+}
+
+.opacity{
+    opacity: 0.5;
 }
 .form
 {
