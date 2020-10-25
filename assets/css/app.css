@@ -6,16 +6,29 @@ body {
     color: #000000;
     background:  url("../img/background.png") no-repeat 50% 0;
 }
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-    border-bottom: 1px solid #000;
-}
-table{
-    background: white;
+
+TABLE {
     margin-top: 10%;
     border-color:  #000 lightgrey;
     border-radius: 6px;
     width: 100%;
+    background: white;
+    border-collapse: collapse;
+}
+TD, TH {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    height: 50px;
+    text-align: center;
+}
+TH {
+    color: white;
+    background: rgba(0, 0, 139,.8);
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #000;
 }
 
 .menu-main{
@@ -95,17 +108,9 @@ li {
     padding: 15px;
     display: block;
 }
-table{
-    border: 1px;
-}
-td {
-    padding: 20px;
-    height: 50px;
-    text-align: center;
-}
+
 th{
-    color: #aacd4e;
-    background: #00008B;
+
 }
 button
 {
