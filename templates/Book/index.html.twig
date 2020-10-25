@@ -3,9 +3,17 @@
 {% block title %}Book index{% endblock %}
 
 {% block body %}
-    <h1>Books</h1>
-        <button style="margin-bottom: 20px; width: 145px"> <a href="{{ path('book_new') }}">Create new</a></button>
+    <div class="">
+        <ul class="menu-main">
+            <li><a href="{{ path('book_index') }}" class="menu-item">Books</a></li>
+            <li><a href="{{ path('category_index') }}" class="menu-item" >Categories</a></li>
+            <li><a href="" class="menu-item">Authors</a></li>
+            <li><a href="" class="menu-item">Contact</a></li>
+        </ul>
+    </div>
+    <br>
 
+    <h1>Books</h1>
     <table class="table" width="100%">
         <thead>
             <tr>
@@ -39,6 +47,7 @@
         {% endfor %}
         </tbody>
     </table>
+    <button style="margin-bottom: 20px; width: 145px"> <a href="{{ path('book_new') }}">Create new</a></button>
 <div class="pagination" style="color: #222222"> {{ knp_pagination_render(books) }}</div>
 
 {% endblock %}

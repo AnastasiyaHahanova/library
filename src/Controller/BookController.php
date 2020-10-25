@@ -20,21 +20,12 @@ class BookController extends AbstractController
      * @Route("/list", name="book_index", methods={"GET"})
      */
 
-    public function index(Request $request, PaginatorInterface $paginator,BookRepository $bookRepository)
+    public function index(Request $request, PaginatorInterface $paginator,BookRepository $bookRepository): Response
     {
 
         $allBooksQuery = $bookRepository->createQueryBuilder('p');
-        // Paginate the results of the query
-        $books = $paginator->paginate(
-        // Doctrine Query, not results
-            $allBooksQuery,
-            // Define the page parameter
-            $request->query->getInt('page', 1),
-            // Items per page
-            4
-        );
+        $books = $paginator->paginate($allBooksQuery, $request->query->getInt('page', 1), 4);
 
-        // Render the twig view
         return $this->render('Book/index.html.twig', [
             'books' => $books
         ]);

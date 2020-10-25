@@ -6,6 +6,45 @@ body {
     color: #000000;
     background:  url("../img/background.png") no-repeat 50% 0;
 }
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #000;
+}
+table{
+    background: white;
+    margin-top: 10%;
+    border-color:  #000 lightgrey;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.menu-main{
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.menu-item
+{
+    padding: 15px;
+    margin-top: 10px;
+    margin-right: 2px;
+    border-width: 5px;
+    background: rgba(221, 160, 221,.5);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+a {
+    text-decoration: none;
+}
+
+li {
+    float: left;
+    display: inline;
+}
 
 .footer{
     font-size: 20px;
