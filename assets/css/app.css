@@ -8,13 +8,17 @@ body {
 }
 
 TABLE {
-    margin-top: 10%;
+    margin-top: 25px;
     border-color:  #000 lightgrey;
-    border-radius: 6px;
     width: 100%;
     background: white;
     border-collapse: collapse;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
 }
+
 TD, TH {
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -32,7 +36,7 @@ tr:nth-child(even) {
 }
 
 .menu-main{
-    margin-top: 25px;
+    margin-top: 5%;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -109,9 +113,6 @@ li {
     display: block;
 }
 
-th{
-
-}
 button
 {
     display: inline-block;
