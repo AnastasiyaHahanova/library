@@ -20,11 +20,11 @@ class BookController extends AbstractController
      * @Route("/list", name="book_index", methods={"GET"})
      */
 
-    public function index(Request $request, PaginatorInterface $paginator,BookRepository $bookRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator, BookRepository $bookRepository): Response
     {
 
         $allBooksQuery = $bookRepository->createQueryBuilder('p');
-        $books = $paginator->paginate($allBooksQuery, $request->query->getInt('page', 1), 4);
+        $books         = $paginator->paginate($allBooksQuery, $request->query->getInt('page', 1), 4);
 
         return $this->render('Book/index.html.twig', [
             'books' => $books
@@ -89,7 +89,7 @@ class BookController extends AbstractController
      */
     public function delete(Request $request, Book $book): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$book->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $book->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($book);
             $entityManager->flush();

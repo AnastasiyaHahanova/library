@@ -10,12 +10,14 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 class MyBooksFixtures extends Fixture implements DependentFixtureInterface
 {
     private $categoryRepository;
+
     public function getDependencies()
     {
-        return array(
+        return [
             CategoryFixtures::class,
-        );
+        ];
     }
+
     public function __construct(CategoryRepository $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
@@ -23,7 +25,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(\Doctrine\Persistence\ObjectManager $manager)
     {
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Зарубежная литература');
         $book->setCategory($category);
         $book->setYear(1964);
@@ -31,7 +33,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Э.Хэмингуэй");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Классическая литература');
         $book->setCategory($category);
         $book->setYear(1868);
@@ -39,7 +41,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Ф.М. Достоевский");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Классическая литература');
         $book->setCategory($category);
         $book->setYear(1878);
@@ -47,7 +49,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Л.Н. Толстой");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Зарубежная литература');
         $book->setCategory($category);
         $book->setYear(1973);
@@ -55,7 +57,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Т.Харди");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Зарубежная литература');
         $book->setCategory($category);
         $book->setYear(1847);
@@ -63,7 +65,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Ш.Бронте");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Зарубежная литература');
         $book->setCategory($category);
         $book->setYear(1847);
@@ -71,7 +73,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Э.Бронте");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Зарубежная литература');
         $book->setCategory($category);
         $book->setYear(1948);
@@ -79,7 +81,7 @@ class MyBooksFixtures extends Fixture implements DependentFixtureInterface
         $book->setAuthor("Жан Жак Руссо");
         $manager->persist($book);
 
-        $book = new Book();
+        $book     = new Book();
         $category = $this->categoryRepository->findOneByName('Зарубежная литература');
         $book->setCategory($category);
         $book->setYear(1967);

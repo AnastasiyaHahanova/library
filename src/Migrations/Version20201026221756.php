@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200621165807 extends AbstractMigration
+final class Version20201026221756 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -22,7 +22,9 @@ final class Version20200621165807 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE country ADD continent VARCHAR(255) NOT NULL');
+        $this->addSql('ALTER TABLE book ADD author_id INT NOT NULL, DROP author');
+        $this->addSql('ALTER TABLE book ADD CONSTRAINT FK_CBE5A331F675F31B FOREIGN KEY (author_id) REFERENCES author (id)');
+        $this->addSql('CREATE INDEX IDX_CBE5A331F675F31B ON book (author_id)');
     }
 
     public function down(Schema $schema): void
@@ -30,6 +32,8 @@ final class Version20200621165807 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE country DROP continent');
+        $this->addSql('ALTER TABLE book DROP FOREIGN KEY FK_CBE5A331F675F31B');
+        $this->addSql('DROP INDEX IDX_CBE5A331F675F31B ON book');
+        $this->addSql('ALTER TABLE book ADD author VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, DROP author_id');
     }
 }

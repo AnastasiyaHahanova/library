@@ -15,12 +15,11 @@ class AuthorType extends AbstractType
     {
         $builder
             ->add('firstName', TextType::class)
-            ->add('secondName',TextType::class)
+            ->add('secondName', TextType::class)
             ->add('patronymic', TextType::class)
             ->add('birthDate', \DateTime::class)
             ->add('country', TextType::class)
-            ->add('submit', SubmitType::class)
-        ;
+            ->add('submit', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

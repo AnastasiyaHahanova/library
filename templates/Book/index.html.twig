@@ -7,28 +7,27 @@
     <h1>Books</h1>
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Year</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th colspan="2">Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th colspan="2">Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for book in books %}
             <tr>
                 <td>{{ book.id }}</td>
-                <td>{{ book.name }}</td>
+                <td><a class="link" href="{{ path('book_show', {'id': book.id}) }}">{{ book.name }}</a></td>
                 <td>{{ book.year }}</td>
-                <td>{{ book.author }}</td>
+                <td><a class="link"
+                       href="{{ path('author_show',{'id':book.author.id}) }}">{{ book.author.firstName }} {{ book.author.patronymic }} {{ book.author.secondName }} </a>
+                </td>
                 <td>{{ book.getCategory.name }}</td>
                 <td>
-                    <button class="btn btn-danger"> <a href="{{ path('book_show', {'id': book.id}) }}">Show</a></button>
-                </td>
-                <td>
-                    <button class="btn btn-danger">  <a href="{{ path('book_edit', {'id': book.id}) }}">Edit</a></button>
+                    <button class="btn btn-danger"><a href="{{ path('book_edit', {'id': book.id}) }}">Edit</a></button>
                 </td>
             </tr>
         {% else %}
@@ -38,7 +37,7 @@
         {% endfor %}
         </tbody>
     </table>
-    <button style="margin-bottom: 20px; width: 145px"> <a href="{{ path('book_new') }}">Create new</a></button>
-<div class="pagination" style="color: #222222"> {{ knp_pagination_render(books) }}</div>
+    <button style="margin-bottom: 20px; width: 145px"><a href="{{ path('book_new') }}">Create new</a></button>
+    <div class="pagination" style="color: #222222"> {{ knp_pagination_render(books) }}</div>
 
 {% endblock %}

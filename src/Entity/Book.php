@@ -27,7 +27,9 @@ class Book
     private $year;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var Author
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
@@ -86,18 +88,18 @@ class Book
     }
 
     /**
-     * @return string|null
+     * @return Author
      */
-    public function getAuthor(): ?string
+    public function getAuthor(): Author
     {
         return $this->author;
     }
 
     /**
-     * @param string $author
+     * @param Author
      * @return $this
      */
-    public function setAuthor(string $author): self
+    public function setAuthor(Author $author): self
     {
         $this->author = $author;
 

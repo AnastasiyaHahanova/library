@@ -16,11 +16,12 @@ class UserController extends AbstractController
     /**
      * @Route("/create", name="user.create", methods={"GET", "POST"})
      */
-    public function create(Request $request):Response
+    public function create(Request $request): Response
     {
         $form = $this->createForm(UserType::class, null, []);
         $form->handleRequest($request);
-        return  $this->render('User/create.html.twig',['form'=>$form->createView()]);
+
+        return $this->render('User/create.html.twig', ['form' => $form->createView()]);
     }
 
 }

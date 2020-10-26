@@ -20,8 +20,7 @@ class UserType extends AbstractType
             ->add('secondName', TextType::class)
             ->add('patronymic', TextType::class)
             ->add('email', TextType::class)
-            ->add('birthDate', DateType::class)
-        ;
+            ->add('birthDate', DateType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -17,10 +17,10 @@ class CategoryController extends AbstractController
     /**
      * @Route("/list", name="category_index", methods={"GET"})
      */
-    public function list(Request $request, PaginatorInterface $paginator,CategoryRepository $categoryRepository): Response
+    public function list(Request $request, PaginatorInterface $paginator, CategoryRepository $categoryRepository): Response
     {
         $allCategoryQuery = $categoryRepository->createQueryBuilder('p');
-        $categories = $paginator->paginate($allCategoryQuery, $request->query->getInt('page', 1), 4);
+        $categories       = $paginator->paginate($allCategoryQuery, $request->query->getInt('page', 1), 4);
 
         return $this->render('Category/list.html.twig', [
             'categories' => $categories
