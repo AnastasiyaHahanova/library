@@ -19,7 +19,6 @@ class BookController extends AbstractController
     /**
      * @Route("/list", name="book_list", methods={"GET"})
      */
-
     public function list(Request $request, PaginatorInterface $paginator, BookRepository $bookRepository): Response
     {
         $allBooksQuery = $bookRepository->createQueryBuilder('p');

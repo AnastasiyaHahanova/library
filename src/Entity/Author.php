@@ -147,4 +147,9 @@ class Author
         return $this;
     }
 
+    public function getFullName():string
+    {
+        return sprintf('%s %s %s',$this->firstName,$this->patronymic,$this->secondName);
+    }
+
 }
