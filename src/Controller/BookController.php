@@ -17,10 +17,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookController extends AbstractController
 {
     /**
-     * @Route("/list", name="book_index", methods={"GET"})
+     * @Route("/list", name="book_list", methods={"GET"})
      */
 
-    public function index(Request $request, PaginatorInterface $paginator, BookRepository $bookRepository): Response
+    public function list(Request $request, PaginatorInterface $paginator, BookRepository $bookRepository): Response
     {
 
         $allBooksQuery = $bookRepository->createQueryBuilder('p');

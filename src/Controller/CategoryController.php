@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CategoryController extends AbstractController
 {
     /**
-     * @Route("/list", name="category_index", methods={"GET"})
+     * @Route("/list", name="category_list", methods={"GET"})
      */
     public function list(Request $request, PaginatorInterface $paginator, CategoryRepository $categoryRepository): Response
     {
