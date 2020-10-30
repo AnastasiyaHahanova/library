@@ -4,11 +4,7 @@
 
 {% block body %}
     <h1>Edit Book</h1>
-    <button class="back" style="margin-left: 250px"><a href="{{ path('book_index') }}">Back to list</a></button>
-
+    <button class="back" style="margin-left: 250px"><a href="{{ path('book_list') }}">Back to list</a></button>
     {{ include('book/_form.html.twig', {'button_label': 'Update'}) }}
-
-
-
     {{ include('book/_delete_form.html.twig') }}
 {% endblock %}

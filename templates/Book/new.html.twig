@@ -4,8 +4,6 @@
 
 {% block body %}
     <h1>Create new Book</h1>
-    <button class="back" style="margin-left: 300px"><a href="{{ path('book_index') }}">Back to list</a></button>
+    <button class="back" style="margin-left: 300px"><a href="{{ path('book_list') }}">Back to list</a></button>
     {{ include('book/_form.html.twig') }}
-
-
 {% endblock %}

@@ -22,7 +22,6 @@ class BookController extends AbstractController
 
     public function list(Request $request, PaginatorInterface $paginator, BookRepository $bookRepository): Response
     {
-
         $allBooksQuery = $bookRepository->createQueryBuilder('p');
         $books         = $paginator->paginate($allBooksQuery, $request->query->getInt('page', 1), 4);
 
@@ -45,7 +44,7 @@ class BookController extends AbstractController
             $entityManager->persist($book);
             $entityManager->flush();
 
-            return $this->redirectToRoute('book_index');
+            return $this->redirectToRoute('book_list');
         }
 
         return $this->render('Book/new.html.twig', [
@@ -75,7 +74,7 @@ class BookController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('book_index');
+            return $this->redirectToRoute('book_list');
         }
 
         return $this->render('Book/edit.html.twig', [
@@ -95,6 +94,6 @@ class BookController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('book_index');
+        return $this->redirectToRoute('book_list');
     }
 }

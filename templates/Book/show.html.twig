@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Book</h1>
-    <button style="width: 90px; margin-left: 75%" ;><a href="{{ path('book_index') }}"><b>Back to list</b></a></button>
+    <button style="width: 90px; margin-left: 75%" ;><a href="{{ path('book_list') }}"><b>Back to list</b></a></button>
     <table class="table" style="width: 70%">
         <tbody>
         <tr style="height: 30px">
@@ -16,7 +16,6 @@
             <td>{{ book.author.firstName }} {{ book.author.patronymic }} {{ book.author.secondName }}</td>
             <td>{{ book.name }}</td>
             <td>{{ book.year }}</td>
-
         </tr>
         <tr>
             <td>
