@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use App\Entity\Author;
 use App\Entity\Book;
 use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -19,7 +20,10 @@ class BookType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('year', NumberType::class)
-            ->add('author', TextType::class)
+            ->add('author', EntityType::class,[
+                'label' => 'Author',
+                'class'=>Author::class
+            ])
             ->add('category', EntityType::class, [
                 'label' => 'Category',
                 'class' => Category::class

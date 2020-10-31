@@ -127,6 +127,6 @@ class Book
 
     public function __toString(): string
     {
-        return $this->getCategory();
+        return $this->getId();
     }
 }

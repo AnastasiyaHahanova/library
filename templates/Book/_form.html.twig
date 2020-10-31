@@ -1,25 +1,21 @@
 {{ form_start(form) }}
-<div class="form">
+<div class="auth ">
+    <div class="row">
     <label>Author</label>
-    <div class="input">
-        {{ form_widget(form.author) }}
+        {{ form_widget(form.author,{'attr': {'class': 'input'}}) }}
     </div>
+    <div class="row">
     <label>Name</label>
-    <div class="input">
-
-        {{ form_widget(form.name) }}
+        {{ form_widget(form.name,{'attr': {'class': 'input'}}) }}
     </div>
+    <div class="row">
     <label>Year</label>
-    <div class="input">
-
-        {{ form_widget(form.year) }}
+        {{ form_widget(form.year,{'attr': {'class': 'input'}}) }}
     </div>
+    <div class="row">
     <label>Category</label>
-    <div class="input">
-
-        {{ form_widget(form.category) }}
+        {{ form_widget(form.category,{'attr': {'class': 'input'}}) }}
     </div>
-
     <button style="color: yellow">{{ button_label|default('Save') }}</button>
 </div>
 {{ form_end(form) }}

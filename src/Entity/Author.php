@@ -152,4 +152,8 @@ class Author
         return sprintf('%s %s %s',$this->firstName,$this->patronymic,$this->secondName);
     }
 
+    public function __toString():string
+    {
+        return $this->getFullName();
+    }
 }
