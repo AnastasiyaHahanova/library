@@ -86,7 +86,15 @@ li {
     background: rgba(221, 160, 221, .5);
 }
 
+.pink-background
+{
+    background: rgba(221, 160, 221, .5);
+}
+
 .auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
@@ -105,7 +113,8 @@ li {
 }
 
 .row {
-    padding: 15px;
+    padding: 15px 0;
+    margin: 0 -10px;
     display: flex;
     text-align: left;
 }
@@ -182,6 +191,12 @@ label {
     display: block;
 }
 
+.part
+{
+    flex-shrink: 0;
+    padding: 0 10px;
+}
+
 .part-1
 {
     width: 10%;
@@ -195,6 +210,7 @@ label {
 .part-3
 {
     width: 30%;
+    flex-shrink: 0;
 }
 
 .part-4
@@ -231,3 +247,4 @@ label {
 {
     width: 100%;
 }
+

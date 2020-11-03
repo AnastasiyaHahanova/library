@@ -1,23 +1,26 @@
 {{ form_start(form) }}
-<div style="display: block" class="auth">
-    <div class="row">
-        <div class="part-2"><label>Author</label></div>
-        <div> {{ form_widget(form.author,{'attr': {'class': 'input'}}) }}</div>
-    </div>
-    <div class="row">
-        <div class="part-2"><label>Name</label></div>
-        <div class="part-1"> {{ form_widget(form.name,{'attr': {'class': 'input'}}) }}</div>
-    </div>
-    <div class="row">
-        <div class="part-2">
-            <label>Year</label></div>
-        <div>
-            {{ form_widget(form.year,{'attr': {'class': 'input'}}) }}</div>
-    </div>
-    <div class="row">
-        <div class="part-2"><label>Category</label></div>
-        <div class="part-1"> {{ form_widget(form.category,{'attr': {'class': 'input'}}) }}</div>
-    </div>
+<div class="">
+<div class="pink-background auth">
+    <div class="form-center">
+        <div class="row">
+            <div class="part part-2"><label>Author</label></div>
+            <div class="part part-8"> {{ form_widget(form.author,{'attr': {'class': 'input'}}) }}</div>
+        </div>
+        <div class="row">
+            <div class="part part-2"><label>Name</label></div>
+            <div class="part part-8"> {{ form_widget(form.name,{'attr': {'class': 'input'}}) }}</div>
+        </div>
+        <div class="row">
+            <div class="part part-2"><label>Year</label></div>
+            <div class="part part-8">
+                {{ form_widget(form.year,{'attr': {'class': 'input'}}) }}</div>
+        </div>
+        <div class="row">
+            <div class="part part-2"><label>Category</label></div>
+            <div class="part part-8"> {{ form_widget(form.category,{'attr': {'class': 'input'}}) }}</div>
+        </div>
     <button style="color: yellow">{{ button_label|default('Save') }}</button>
+    </div>
+</div>
 </div>
 {{ form_end(form) }}
