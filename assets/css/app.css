@@ -118,6 +118,10 @@ li {
     display: flex;
     text-align: left;
 }
+.icon{
+    padding: 0 10px;
+    color: rgba(0, 0, 139, .8)
+}
 
 button {
     display: inline-block;
@@ -258,5 +262,6 @@ header
 {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 

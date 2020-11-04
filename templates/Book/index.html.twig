@@ -27,8 +27,8 @@
                 </td>
                 <td>{{ book.getCategory.name }}</td>
                 <td>
-                    <div class="flex-center">
-                    <button class="btn btn-danger"><a href="{{ path('book_edit', {'id': book.id}) }}">Edit</a></button>
+                    <div class="flex-center" >
+                    <a href="{{ path('book_edit', {'id': book.id}) }}"><i class="fas fa-edit icon"></i></a>
                     {{ include('Book/_delete_form.html.twig') }}
                     </div>
                 </td>
