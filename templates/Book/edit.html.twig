@@ -5,8 +5,6 @@
 {% block body %}
     <div class="flex-sb">
         <h1>Edit Book</h1>
-        <button class="back" style="margin-left: 250px"><a href="{{ path('book_list') }}">Back to list</a></button>
     </div>
     {{ include('Book/_form.html.twig', {'button_label': 'Update'}) }}
-    {{ include('Book/_delete_form.html.twig') }}
 {% endblock %}

@@ -248,3 +248,15 @@ label {
     width: 100%;
 }
 
+header
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flex-center
+{
+    display: flex;
+    align-items: center;
+}
+
