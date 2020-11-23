@@ -6,7 +6,7 @@ security:
                 # the class of the entity that represents users
                 class: 'App\Entity\User'
                 # the property to query by - e.g. username, email, etc
-                property: 'username'
+                property: username
                 # optional: if you're using multiple Doctrine entity
                 # managers, this option defines which one to use
                 # manager_name: 'customer'
@@ -14,7 +14,8 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
+        view:
+            pattern: ^/
             anonymous: lazy
             guard:
                 authenticators:
@@ -33,5 +34,5 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-    # - { path: ^/admin, roles: ROLE_ADMIN }
+#     - { path: ^/book/list, roles: ROLE_USER }
     # - { path: ^/profile, roles: ROLE_USER }
