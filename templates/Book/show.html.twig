@@ -14,12 +14,14 @@
         <tr>
             <th>Author</th>
             <th>Name</th>
+            <th>Annotation</th>
             <th>Year</th>
             <th>Actions</th>
         </tr>
         <tr>
             <td>{{ book.author.firstName }} {{ book.author.patronymic }} {{ book.author.secondName }}</td>
             <td>{{ book.name }}</td>
+            <td style="width: 500px;padding: 15px">{{ book.annotation }}</td>
             <td>{{ book.year }}</td>
             <td>
                 <div class="flex-center">
