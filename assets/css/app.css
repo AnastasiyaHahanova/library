@@ -8,7 +8,7 @@ body {
 }
 
 TABLE {
-    margin-top: 25px;
+    margin-top: 15px;
     border-color: #000 lightgrey;
     width: 100%;
     background: white;
@@ -37,12 +37,14 @@ tr:nth-child(even) {
 }
 
 .menu-main {
+    width: 100%;
     margin-top: 70px;
     padding-top: 10px;
     padding-bottom: 30px;
 }
 
 .menu-item {
+    width: 10%;
     color: whitesmoke;
     padding: 15px;
     margin-top: 10px;
@@ -98,8 +100,7 @@ li {
     margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
-    width: 45em;
-    height: 25em;
+    width: 50em;
     border-color: #000 #4B0082;
     border-width: 3px;
     border-style: solid none;
@@ -127,13 +128,14 @@ button {
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: .5em 2em;
+    font-weight: bold;
+    padding: .6em 3em;
     outline: none;
-    border-width: 2px 0;
+    border-width: 1px 0;
     border-style: solid none;
-    border-color: #FDBE33 #000 #4B0082;
+    border-color: black;
     border-radius: 6px;
-    background: linear-gradient(#FFC0CB, #4B0082) #800080;
+    background: rgba(0, 0, 139, .3);
     transition: 0.2s;
 }
 
@@ -264,4 +266,30 @@ header
     align-items: center;
     justify-content: center;
 }
+
+.left, .right {
+    display: inline-block;
+    width: 100%;
+    margin-right: -100%;
+    vertical-align: bottom;
+}
+
+.right {
+    text-align: right;
+}
+.left a, .right a {
+    display: inline-block;
+    position: relative;
+}
+
+.center-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 

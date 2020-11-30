@@ -46,9 +46,10 @@ class BookController extends AbstractController
             return $this->redirectToRoute('book_list');
         }
 
-        return $this->render('Book/new.html.twig', [
-            'book' => $book,
-            'form' => $form->createView(),
+        return $this->render('Book/form.html.twig', [
+            'action' => 'Add',
+            'book'   => $book,
+            'form'   => $form->createView(),
         ]);
     }
 
@@ -76,7 +77,8 @@ class BookController extends AbstractController
             return $this->redirectToRoute('book_list');
         }
 
-        return $this->render('Book/edit.html.twig', [
+        return $this->render('Book/form.html.twig', [
+            'action' => 'Update',
             'book' => $book,
             'form' => $form->createView(),
         ]);

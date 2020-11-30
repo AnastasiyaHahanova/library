@@ -3,32 +3,31 @@
 {% block title %}Book{% endblock %}
 
 {% block body %}
-    <h1>Book</h1>
-    <button style="width: 90px; margin-left: 75%" ;><a href="{{ path('book_list') }}"><b>Back to list</b></a></button>
-    <table class="table" style="width: 70%">
+    <div class="flex-center" style="margin-top: 10%; margin-left: 5px">
+        <div class="part-2 left"><h1>Book</h1></div>
+        <div class="part-2 right" style="margin-right: 15px">
+            <button><a class="white button" href="{{ path('book_list') }}">Back to list</a></button>
+        </div>
+    </div>
+    <table class="table">
         <tbody>
-        <tr style="height: 30px">
+        <tr>
             <th>Author</th>
             <th>Name</th>
             <th>Year</th>
+            <th>Actions</th>
         </tr>
-        <tr style="height: 300px">
+        <tr>
             <td>{{ book.author.firstName }} {{ book.author.patronymic }} {{ book.author.secondName }}</td>
             <td>{{ book.name }}</td>
             <td>{{ book.year }}</td>
-        </tr>
-        <tr>
             <td>
-                <button><a href="{{ path('book_edit', {'id': book.id}) }}"><b>Edit</b></a></button>
+                <div class="flex-center">
+                    <a href="{{ path('book_edit', {'id': book.id}) }}"><i class="fas fa-edit icon"></i></a>
+                    {{ include('Book/delete_form.html.twig') }}
+                </div>
             </td>
-            <td> {{ include('Book/_delete_form.html.twig') }}</td>
         </tr>
         </tbody>
     </table>
-
-
-
-
-
-
 {% endblock %}
