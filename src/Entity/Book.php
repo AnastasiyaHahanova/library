@@ -42,6 +42,11 @@ class Book
     private $category;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $annotation = '';
+
+    /**
      * @return int|null
      */
     public function getId(): ?int
@@ -128,5 +133,17 @@ class Book
     public function __toString(): string
     {
         return $this->getId();
+    }
+
+    public function getAnnotation(): string
+    {
+        return $this->annotation;
+    }
+
+    public function setAnnotation(string $annotation): self
+    {
+        $this->annotation = $annotation;
+
+        return $this;
     }
 }
