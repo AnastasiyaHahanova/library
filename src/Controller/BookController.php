@@ -79,8 +79,8 @@ class BookController extends AbstractController
 
         return $this->render('Book/form.html.twig', [
             'action' => 'Update',
-            'book' => $book,
-            'form' => $form->createView(),
+            'book'   => $book,
+            'form'   => $form->createView(),
         ]);
     }
 

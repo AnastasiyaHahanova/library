@@ -2,34 +2,36 @@
 
 {% block title %}New Book{% endblock %}
 {% block body %}
-{{ form_start(form) }}
-<div class="pink-background auth">
-    <div class="form-center">
-        <div class="row">
-            <div class="center-header"> <h1>{{ action }} Book</h1></div>
-        </div>
-        <div class="row">
-            <div class="part part-2"><label>Author</label></div>
-            <div class="part part-8"> {{ form_widget(form.author,{'attr': {'class': 'input'}}) }}</div>
-        </div>
-        <div class="row">
-            <div class="part part-2"><label>Name</label></div>
-            <div class="part part-8"> {{ form_widget(form.name,{'attr': {'class': 'input'}}) }}</div>
-        </div>
-        <div class="row">
-            <div class="part part-2"><label>Year</label></div>
-            <div class="part part-8">
-                {{ form_widget(form.year,{'attr': {'class': 'input'}}) }}</div>
-        </div>
-        <div class="row">
-            <div class="part part-2"><label>Category</label></div>
-            <div class="part part-8"> {{ form_widget(form.category,{'attr': {'class': 'input'}}) }}</div>
-        </div>
-        <div class="row" style="display: flex;justify-content: center">
-            <div class="part"> {{ form_widget(form.submit,{'label': 'Save'}) }}</div>
-            <div class="part"> <button><a class="white button" href="{{ path('book_list') }}">Cancel</a></button></div>
+    {{ form_start(form) }}
+    <div class="pink-background auth">
+        <div class="form-center">
+            <div class="row">
+                <div class="center-header"><h1>{{ action }} Book</h1></div>
+            </div>
+            <div class="row">
+                <div class="part part-2"><label>Author</label></div>
+                <div class="part part-8"> {{ form_widget(form.author,{'attr': {'class': 'input'}}) }}</div>
+            </div>
+            <div class="row">
+                <div class="part part-2"><label>Name</label></div>
+                <div class="part part-8"> {{ form_widget(form.name,{'attr': {'class': 'input'}}) }}</div>
+            </div>
+            <div class="row">
+                <div class="part part-2"><label>Year</label></div>
+                <div class="part part-8">
+                    {{ form_widget(form.year,{'attr': {'class': 'input'}}) }}</div>
+            </div>
+            <div class="row">
+                <div class="part part-2"><label>Category</label></div>
+                <div class="part part-8"> {{ form_widget(form.category,{'attr': {'class': 'input'}}) }}</div>
+            </div>
+            <div class="row" style="display: flex;justify-content: center">
+                <div class="part"> {{ form_widget(form.submit,{'label': 'Save'}) }}</div>
+                <div class="part">
+                    <button><a class="white button" href="{{ path('book_list') }}">Cancel</a></button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-{{ form_end(form) }}
+    {{ form_end(form) }}
 {% endblock %}

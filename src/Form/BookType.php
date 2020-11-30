@@ -20,9 +20,9 @@ class BookType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('year', NumberType::class)
-            ->add('author', EntityType::class,[
+            ->add('author', EntityType::class, [
                 'label' => 'Author',
-                'class'=>Author::class
+                'class' => Author::class
             ])
             ->add('category', EntityType::class, [
                 'label' => 'Category',
